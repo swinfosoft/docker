@@ -1,0 +1,88 @@
+1. Command to create a docker image
+sudo docker build -f Dockerfile -t dockertag pathOfTheDockerFile
+
+Note: dockertag should be in the lower case.
+
+2. Command to view docker images
+sudo docker images
+
+3. Command to run a docker image
+
+sudo docker run -p containerPort:hostport imageName
+
+-p is used to publish a container port to the specifed host port.
+
+4. Command to exit a container use ctrl+c.
+
+5. Command to remove stopped containers:
+
+sudo docker container prune
+
+6. Command to view containers
+
+sudo docker ps -a
+
+7. Command to delete a docker image
+sudo docker image rm ImageId
+
+8. The default docker server port is 2375
+
+9. Command to check the status of Docker daemon.
+sudo service docker status
+
+10. Command to stop Docker daemon.
+sudo service docker stop
+
+11. Command to start Docker daemon.
+sudo service docker start
+
+12. By default, docker images contents are saved in 
+/var/lib/docker/aufs/diff/<id> files.
+
+13. To transfer a docker image to another machine, a tar file need to be created
+for the image as follows:
+
+docker save -o <save image to path> <image name>
+
+14. From the tar file, an image is loaded as follows:
+docker load -i <path to image tar file>
+
+15. To display docker details:
+sudo docker info
+
+16. To create a volume outside a container
+
+sudo docker volume create volname
+
+17. To list volumes
+
+sudo docker volume ls
+
+18. To inspect a volume
+
+sudo docker volume inspect volname
+
+19. To remove a volume
+
+sudo docker volume rm volname
+
+20. To start a container with a volume
+
+docker run -d --name container-name   -v volname:/container-folder image-name
+
+21. To start a container with a read only volume
+
+docker run -d --name container-name   -v volname:/container-folder:ro image-name
+
+
+
+
+
+
+
+
+
+
+
+
+
