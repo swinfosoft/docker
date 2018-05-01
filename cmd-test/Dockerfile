@@ -4,7 +4,7 @@ LABEL author=Neeraj
 
 RUN mkdir build 
 
-COPY mypack build/mypack
+COPY bin/mypack build/mypack
 
 ENTRYPOINT ["java", "-cp", "build", "mypack.Adder"]
 
